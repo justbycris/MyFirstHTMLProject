@@ -2,14 +2,23 @@
 
 body {
     background-color: #FFFFFF;
+    /* The image used */
+    background-color: white;
+    /* Set a specific height */
+    height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero-image {
-    background-image: url("https://images.unsplash.com/photo-1522204538344-922f76ecc041?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
+    background-image: url("images/background4.jpg");
     /* The image used */
     background-color: #ffffff;
     /* Used if the image is unavailable */
-    height: 500px;
+    height: 900px;
     /* You must set a specified height */
     background-position: center;
     /* Center the image */
@@ -19,32 +28,54 @@ body {
     /* Resize the background image to cover the entire container */
 }
 
-.topnav {
-    text-align: center;
-    color: #1E1E1E;
-    font-family: 'Overpass', sans-serif;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    clear: both;
+    background-color: #1e1e1e;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.topnav a.active {
-    color: #1E1E1E;
+li {
+    display: inline-block;
+    text-align: center;
 }
 
-.arrow {
+li a {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px;
-    height: 50px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #669bd3ff;
 }
 
 .pro-img {
-    width: 400px;
-    height: 450px;
-    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
     align-items: center;
+    margin-top: 250x;
+    margin-left: 486px;
 }
+
+
+/* add padding and margin to align text*/
 
 h1 {
     text-align: center;
@@ -55,20 +86,29 @@ h1 {
 
 h2 {
     text-align: center;
-    color: #1E1E1E;
+    color: #1e1e1e;
     font-family: 'Overpass', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 p {
-    color: #1E1E1E;
+    color: #ffffff;
     font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 190%;
+    max-width: 1200px;
+    box-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
 }
 
 .medium-image {
@@ -78,13 +118,165 @@ p {
 footer {
     font-family: 'Overpass', sans-serif;
     color: gray;
+    text-align: center;
 }
 
-div.sticky {
-    position: -webkit-sticky;
-    /* Safari */
-    position: sticky;
-    top: 0;
-    background-color: white;
-    border: 2px solid #ffffff;
+.about-me {
+    padding: 50px 50px 50px;
+    margin: 20px 40px 20px 40px;
+    background-color: transparent;
+    color: #1e1e1e;
 }
+
+.why-coding {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 100px 100px 100px;
+}
+
+
+/*Timeline Journey*/
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+
+/*Container around content*/
+
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+
+/*The circles on the timeline */
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+/*Place the container to the left*/
+
+.left {
+    left: -8%;
+}
+
+
+/*Place the container to the right */
+
+.right {
+    left: 50%;
+}
+
+
+/*Add arrows to the left container (pointing right) */
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0px 10px 10px;
+    border-color: transparent transparent transparent transparent white;
+}
+
+
+/* Add arrows to the right contrainer (pointing left)*/
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+
+/*Fix the circle for containers on the right side */
+
+.right::after {
+    left: -16px;
+}
+
+
+/*The actual content */
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+
+@media screen and (max-width: 600px) {
+    /*Place the timeline to the left */
+    .timeline::after {
+        left: 31px;
+    }
+    /*Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    /*Make sure that all arrows are pointint leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    /*Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+    /*Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+
+
+/*Change 'Why coding' to Journey. Create visual timeline*/
+
+
+/*Think on what animations to add*/
